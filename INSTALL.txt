@@ -1,0 +1,196 @@
+═══════════════════════════════════════════════════════════════════
+  INTRUSION DETECTION SYSTEM - INSTALLATION GUIDE
+═══════════════════════════════════════════════════════════════════
+
+QUICK START (EASIEST METHOD)
+═══════════════════════════════════════════════════════════════════
+
+WINDOWS USERS:
+--------------
+1. Extract the zip file
+2. Double-click "start.bat"
+3. Wait 3-5 minutes for setup and training
+4. Open browser: http://127.0.0.1:5000
+
+LINUX/MAC USERS:
+---------------
+1. Extract the zip file
+2. Open terminal in project folder
+3. Run: bash start.sh
+4. Wait 3-5 minutes for setup and training
+5. Open browser: http://127.0.0.1:5000
+
+═══════════════════════════════════════════════════════════════════
+
+MANUAL INSTALLATION (STEP BY STEP)
+═══════════════════════════════════════════════════════════════════
+
+STEP 1: Install Python
+-----------------------
+• Download Python 3.8 or higher from python.org
+• During installation, CHECK "Add Python to PATH"
+• Verify: Open command prompt/terminal, type: python --version
+
+STEP 2: Extract Project
+------------------------
+• Extract ids_project.zip to a folder
+• Open command prompt/terminal
+• Navigate to project folder:
+  
+  Windows: cd C:\path\to\ids_project
+  Linux/Mac: cd /path/to/ids_project
+
+STEP 3: Create Virtual Environment (Recommended)
+-------------------------------------------------
+Windows:
+  python -m venv venv
+  venv\Scripts\activate
+
+Linux/Mac:
+  python3 -m venv venv
+  source venv/bin/activate
+
+STEP 4: Install Dependencies
+-----------------------------
+pip install -r requirements.txt
+
+Wait for installation to complete (2-3 minutes)
+
+STEP 5: Train Models (ONE TIME ONLY)
+-------------------------------------
+python train.py
+
+This will:
+• Generate sample data
+• Preprocess the data
+• Train 7 ML models
+• Create ensemble model
+• Save models (total time: 3-5 minutes on i3)
+
+STEP 6: Run Web Application
+----------------------------
+python app.py
+
+You should see:
+  * Running on http://127.0.0.1:5000
+  
+STEP 7: Access Dashboard
+-------------------------
+• Open web browser
+• Go to: http://127.0.0.1:5000
+• Explore the dashboard!
+
+═══════════════════════════════════════════════════════════════════
+
+SYSTEM REQUIREMENTS
+═══════════════════════════════════════════════════════════════════
+
+Minimum:
+• Processor: Intel i3 or equivalent
+• RAM: 4GB
+• Storage: 500MB free space
+• Python: 3.8 or higher
+• Browser: Chrome, Firefox, Edge, Safari
+
+Recommended:
+• Processor: Intel i5 or higher
+• RAM: 8GB
+• Storage: 1GB free space
+
+═══════════════════════════════════════════════════════════════════
+
+TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════
+
+Problem: "python is not recognized"
+Solution: Install Python and add to PATH, or use "python3" instead
+
+Problem: "pip is not recognized"
+Solution: Use "python -m pip install -r requirements.txt"
+
+Problem: "Models not found"
+Solution: Run "python train.py" first
+
+Problem: "Port already in use"
+Solution: 
+  • Close other programs using port 5000
+  • Or edit config.py and change PORT = 5001
+
+Problem: Training takes too long
+Solution: In config.py, reduce SAMPLE_SIZE to 5000
+
+Problem: Import errors
+Solution: Make sure virtual environment is activated
+  Windows: venv\Scripts\activate
+  Linux/Mac: source venv/bin/activate
+
+═══════════════════════════════════════════════════════════════════
+
+USAGE GUIDE
+═══════════════════════════════════════════════════════════════════
+
+1. SINGLE TRAFFIC DETECTION
+   • Go to Dashboard → Single Detection tab
+   • Enter traffic parameters OR click "Generate Random Traffic"
+   • Click "Analyze Traffic"
+   • View prediction and confidence score
+
+2. BATCH FILE UPLOAD
+   • Go to Dashboard → Batch Detection tab
+   • Upload CSV file (sample_traffic.csv provided)
+   • Click "Upload & Analyze"
+   • View results for all traffic records
+
+3. VIEW MODEL STATISTICS
+   • Go to Dashboard → Model Statistics tab
+   • Compare performance of all 7 models
+   • View accuracy, precision, recall, F1-score
+
+═══════════════════════════════════════════════════════════════════
+
+FILES INCLUDED
+═══════════════════════════════════════════════════════════════════
+
+Main Files:
+• app.py - Web application
+• train.py - Training script
+• config.py - Configuration
+• preprocessing.py - Data preprocessing
+• models.py - ML models
+• requirements.txt - Dependencies
+
+Scripts:
+• start.bat - Windows quick start
+• start.sh - Linux/Mac quick start
+
+Documentation:
+• README.md - Complete documentation
+• PROJECT_DOCUMENTATION.md - Academic report
+• INSTALL.txt - This file
+
+Sample Data:
+• sample_traffic.csv - Test data for batch upload
+
+Folders:
+• templates/ - HTML files
+• static/ - CSS and JavaScript
+• models/ - Saved models (created after training)
+• data/ - Data folder (created automatically)
+
+═══════════════════════════════════════════════════════════════════
+
+CONTACT & SUPPORT
+═══════════════════════════════════════════════════════════════════
+
+For issues:
+1. Check troubleshooting section above
+2. Read README.md for detailed documentation
+3. Verify all requirements are met
+
+This is a final year B.Tech project for educational purposes.
+
+═══════════════════════════════════════════════════════════════════
+
+Happy Detecting! 🛡️
+
+═══════════════════════════════════════════════════════════════════
